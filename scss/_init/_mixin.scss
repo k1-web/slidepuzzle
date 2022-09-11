@@ -1,0 +1,420 @@
+@charset "UTF-8";
+
+/*
+## Responsive Design
+*/
+@mixin responsive($size: min, $width: 800px) {
+	@if $size == max {
+		@media screen and (max-width: $width) {
+			@content;
+		}
+	} @else if $size == min {
+		@media screen and (min-width: ($width - 0.02px)) {
+			@content;
+		}
+	} @else {
+		@if $size == pc {
+			@media screen and (min-width: 1059.02px) {
+				@content;
+			}
+		} @else if $size == tab {
+			@media screen and (max-width: 1059px) and (min-width: 767.02px) {
+				@content;
+			}
+		} @else if $size == sp {
+			@media screen and (max-width: 767px) {
+				@content;
+			}
+		} @else if $size == pc-tab {
+			@media screen and (min-width: 767.02px) {
+				@content;
+			}
+		} @else if $size == sp-tab {
+			@media screen and (max-width: 1059px) {
+				@content;
+			}
+		}
+	}
+}
+
+
+/*
+## Flex layout
+*/
+@mixin flexbox($flex-jc: center, $flex-ai: center, $flex-fw: wrap, $flex-fd: row, $flex-ac: stretch) {
+	display: flex;
+	justify-content: $flex-jc;
+	align-items: $flex-ai;
+	flex-wrap: $flex-fw;
+	flex-direction: $flex-fd;
+	align-content: $flex-ac;
+}
+
+
+/*
+## IE Only
+*/
+@mixin ie {
+	@media all and (-ms-high-contrast: none) {
+		@content;
+	}
+}
+
+
+/*
+## hover
+*/
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+/*
+## zoom
+*/
+@mixin zoom($size: 0.5) {
+	zoom: $size;
+	-moz-transform: $size;
+}
+
+
+/*
+## 三角アイコン
+*/
+@mixin arrow($color: $black, $type: down, $size: 6px, $width: 3px) {
+	content:'';
+	display: inline-block;
+	width: $size;
+	height: $size;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	@if $type == up {
+		border-top: $width solid $color;
+		border-left: $width solid $color;
+	} @else if $type == down {
+		border-right: $width solid $color;
+		border-bottom: $width solid $color;
+	} @else if $type == left {
+		border-left: $width solid $color;
+		border-bottom: $width solid $color;
+	} @else if $type == right {
+		border-top: $width solid $color;
+		border-right: $width solid $color;
+	}
+}
+@mixin sankaku($color: $black, $type: down, $size: 6px, $width: $size) {
+	content:'';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: $size solid transparent;
+	@if $type == up {
+		border-top: none;
+		border-bottom: $width solid $color;
+	} @else if $type == down {
+		border-bottom: none;
+		border-top: $width solid $color;
+	} @else if $type == left {
+		border-left: none;
+		border-right: $width solid $color;
+	} @else if $type == right {
+		border-right: none;
+		border-left: $width solid $color;
+	} @else if $type == up-left {
+		border-top: $width solid $color;
+		border-left: $width solid $color;
+	} @else if $type == up-right {
+		border-top: $width solid $color;
+		border-right: $width solid $color;
+	} @else if $type == down-left {
+		border-bottom: $width solid $color;
+		border-left: $width solid $color;
+	} @else if $type == down-right {
+		border-bottom: $width solid $color;
+		border-right: $width solid $color;
+	}
+}
+
+
+
+/*
+## ボタン
+*/
+
+
+/*  ↓↓新規ボタン 追加あればこちらへ↓↓  */
+@mixin middle_btn-bg($width, $height, $color, $hover){
+	a{
+		height: 100%;
+		line-height: $height - 2px;
+		background-color: $color;
+		border: 1px solid $color;
+		color: $hover;
+		&::after {
+			@include arrow($hover, right, 8px, 2px);
+		}
+		&:hover {
+			background-color: $hover;
+			color: $color;
+			&::after {
+				border-color: $color;
+			}
+		}
+	}
+}
+@mixin large_btn-bg($width, $height, $color, $hover){
+	@include  default_btn-bg($width, $height, $color, $hover);
+	a {
+		border: 2px solid $color;
+		line-height: $height - 4px;
+	}
+}
+/*  ↑↑新規ボタン 追加あればこちらへ↑↑  */
+
+
+@mixin default_btn-bg($width, $height, $color, $hover){
+	a{
+		height: 100%;
+		background-color: $color;
+		color: $hover;
+		&::after {
+			@include arrow($hover, right, 8px, 2px);
+		}
+		&:hover {
+			background-color: $hover;
+			color: $color;
+			&::after {
+				border-color: $color;
+			}
+		}
+	}
+}
+@mixin button($width, $height, $fz: 14px, $type: default, $color: #f03, $hover: #fff, $spanfz: 0px) {
+	display: inline-block;
+	width: $width;
+	height: $height;
+	box-sizing: border-box;
+	font-size: 0;
+	text-align: center;
+	vertical-align: bottom;
+	position: relative;
+	a {
+		display: block;
+		height: 100%;
+		padding-top: calc($spanfz / 2);
+		padding-bottom: calc($spanfz / 2);
+		line-height: $height;
+		border-radius: 3px;
+		box-sizing: border-box;
+		font-size: $fz;
+		font-weight: bold;
+		letter-spacing: 0;
+		text-decoration: none;
+		cursor: pointer;
+		outline: none;
+		position: relative;
+	}
+	@if $type == middle {
+		@include middle_btn-bg($width, $height, $color, $hover);
+	} @else if $type == large {
+		@include large_btn-bg($width, $height, $color, $hover);
+	} @else {
+		@include default_btn-bg($width, $height, $color, $hover);
+	}
+}
+
+
+
+
+/*
+## table leyout
+*/
+
+
+@mixin tablelayout($type: flex) {
+	@if $type == table {
+		width: 100%;
+		border-collapse: separate;
+
+		thead {
+			tr {
+				th, td {
+					border-right: 1px solid #ddd;
+					&:first-child {
+						border-left: 1px solid #ddd;
+					}
+				}
+				&:first-of-type {
+					th, td {
+						border-top: 1px solid #ddd;
+					}
+				}
+				&:not(:last-of-type) {
+					th, td {
+						border-bottom: 1px solid #ddd;
+					}
+				}
+			}
+		}
+
+		tbody {
+			tr {
+				th, td {
+					border-right: 1px solid #ddd;
+					border-bottom: 1px solid #ddd;
+					&:first-child {
+						border-left: 1px solid #ddd;
+					}
+				}
+				&:first-of-type {
+					th, td {
+						border-top: 1px solid #ddd;
+					}
+				}
+			}
+		}
+
+		th,td {
+			text-align: center;
+			vertical-align: middle;
+			padding: 20px 30px;
+			&.tal {
+				text-align: left;
+			}
+			&.tac {
+				text-align: center;
+			}
+			&.tar {
+				text-align: right;
+			}
+			&.vat {
+				vertical-align: top;
+			}
+			&.vam {
+				vertical-align: middle;
+			}
+			&.vab {
+				vertical-align: bottom;
+			}
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+		td {
+			background-color: #fff;
+		}
+	} @else {
+		@include flexbox(space-between, stretch);
+		width: 100%;
+
+		tbody {
+			@include flexbox(center, stretch, nowrap, column);
+			width: 100%;
+		}
+
+		tr {
+			@include flexbox(center, stretch, nowrap);
+		}
+
+		th, td {
+			@include flexbox(flex-start);
+		}
+
+		tr:not(:first-of-type) {
+			th, td {
+				border-top: none;
+			}
+		}
+
+		th {
+			@include flexbox;
+			flex-basis: 20%;
+			padding: 20px 30px;
+			background-color: #f5f5f5;
+			border: 1px solid #ddd;
+			font-size: 14px;
+			font-weight: normal;
+		}
+
+		td {
+			display: block;
+			flex: 1;
+			padding: 20px 30px;
+			border: 1px solid #ddd;
+			border-left: none;
+		}
+	}
+}
+
+
+/*
+## tabmenu
+*/
+
+@mixin tabmenu($length: 2) {
+
+	input[type="radio"] {
+		display: none;
+		opacity: 0;
+		width: 0;
+		height: 0;
+		margin: 0;
+		padding: 0;
+
+		@for $i from 1 through 4 {
+			&:nth-of-type(#{$i}):checked ~ .tab-selecter>label:nth-of-type(#{$i}) {
+				padding-top: 0;
+				background-color: #fff;
+				border-width: 3px 1px 1px;
+				border-style: solid;
+				border-color: #f03 #ddd #fff;
+				.on {
+					display: block;
+				}
+				.off {
+					display: none;
+				}
+			}
+			&:nth-of-type(#{$i}):checked ~ .tab-contents>.tab-item:nth-of-type(#{$i}) {
+				display: block;
+			}
+		}
+	}
+
+	.tab-selecter {
+		@include flexbox(space-between, stretch, nowrap);
+		width: 100%;
+		border-bottom: 1px solid #ddd;
+
+		label {
+			@include flexbox;
+			flex: 1;
+			height: 100px;
+			margin-bottom: -1px;
+			padding-top: 3px;
+			background-color: #f0f0f0;
+			border: none;
+			border-bottom: 1px solid #ddd;
+
+			font-size: 20px;
+			font-weight: bold;
+
+			cursor: pointer;
+			position: relative;
+			+ label {
+				margin-left: 30px;
+			}
+		}
+	}
+
+	.tab-contents {
+		display: block;
+		.tab-item {
+			display: none;
+		}
+	}
+
+}

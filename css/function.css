@@ -1,0 +1,1880 @@
+.wrap .board {
+  position: relative;
+}
+.wrap .board .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 2px;
+}
+.wrap .board .grid .clm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  z-index: 1;
+  position: relative;
+}
+.wrap .board .labels {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 2px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.wrap .board .labels .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  background: #e0e0e0;
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+input {
+  display: none;
+}
+input.row-1.col-1:checked ~ .board .labels .label-1-1 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-1.col-2:checked ~ .board .labels .label-1-2 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-1.col-3:checked ~ .board .labels .label-1-3 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-2.col-1:checked ~ .board .labels .label-2-1 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-2.col-2:checked ~ .board .labels .label-2-2 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-2.col-3:checked ~ .board .labels .label-2-3 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-3.col-1:checked ~ .board .labels .label-3-1 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-3.col-2:checked ~ .board .labels .label-3-2 {
+  opacity: 1;
+  z-index: -1;
+}
+input.row-3.col-3:checked ~ .board .labels .label-3-3 {
+  opacity: 1;
+  z-index: -1;
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-0-1,
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-1-0,
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-1-2,
+input[name=r-1]#i-1-1-1:checked ~ .board .labels.labels-1 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-0-2,
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-1-1,
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-1-3,
+input[name=r-1]#i-1-1-2:checked ~ .board .labels.labels-1 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-0-3,
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-1-2,
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-1-4,
+input[name=r-1]#i-1-1-3:checked ~ .board .labels.labels-1 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-1-1,
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-2-0,
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-2-2,
+input[name=r-1]#i-1-2-1:checked ~ .board .labels.labels-1 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-1-2,
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-2-1,
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-2-3,
+input[name=r-1]#i-1-2-2:checked ~ .board .labels.labels-1 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-1-3,
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-2-2,
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-2-4,
+input[name=r-1]#i-1-2-3:checked ~ .board .labels.labels-1 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-2-1,
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-3-0,
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-3-2,
+input[name=r-1]#i-1-3-1:checked ~ .board .labels.labels-1 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-2-2,
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-3-1,
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-3-3,
+input[name=r-1]#i-1-3-2:checked ~ .board .labels.labels-1 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-2-3,
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-3-2,
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-3-4,
+input[name=r-1]#i-1-3-3:checked ~ .board .labels.labels-1 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-0-1,
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-1-0,
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-1-2,
+input[name=r-2]#i-2-1-1:checked ~ .board .labels.labels-2 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-0-2,
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-1-1,
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-1-3,
+input[name=r-2]#i-2-1-2:checked ~ .board .labels.labels-2 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-0-3,
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-1-2,
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-1-4,
+input[name=r-2]#i-2-1-3:checked ~ .board .labels.labels-2 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-1-1,
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-2-0,
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-2-2,
+input[name=r-2]#i-2-2-1:checked ~ .board .labels.labels-2 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-1-2,
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-2-1,
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-2-3,
+input[name=r-2]#i-2-2-2:checked ~ .board .labels.labels-2 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-1-3,
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-2-2,
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-2-4,
+input[name=r-2]#i-2-2-3:checked ~ .board .labels.labels-2 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-2-1,
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-3-0,
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-3-2,
+input[name=r-2]#i-2-3-1:checked ~ .board .labels.labels-2 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-2-2,
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-3-1,
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-3-3,
+input[name=r-2]#i-2-3-2:checked ~ .board .labels.labels-2 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-2-3,
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-3-2,
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-3-4,
+input[name=r-2]#i-2-3-3:checked ~ .board .labels.labels-2 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-0-1,
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-1-0,
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-1-2,
+input[name=r-3]#i-3-1-1:checked ~ .board .labels.labels-3 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-0-2,
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-1-1,
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-1-3,
+input[name=r-3]#i-3-1-2:checked ~ .board .labels.labels-3 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-0-3,
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-1-2,
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-1-4,
+input[name=r-3]#i-3-1-3:checked ~ .board .labels.labels-3 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-1-1,
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-2-0,
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-2-2,
+input[name=r-3]#i-3-2-1:checked ~ .board .labels.labels-3 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-1-2,
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-2-1,
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-2-3,
+input[name=r-3]#i-3-2-2:checked ~ .board .labels.labels-3 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-1-3,
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-2-2,
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-2-4,
+input[name=r-3]#i-3-2-3:checked ~ .board .labels.labels-3 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-2-1,
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-3-0,
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-3-2,
+input[name=r-3]#i-3-3-1:checked ~ .board .labels.labels-3 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-2-2,
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-3-1,
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-3-3,
+input[name=r-3]#i-3-3-2:checked ~ .board .labels.labels-3 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-2-3,
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-3-2,
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-3-4,
+input[name=r-3]#i-3-3-3:checked ~ .board .labels.labels-3 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-0-1,
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-1-0,
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-1-2,
+input[name=r-4]#i-4-1-1:checked ~ .board .labels.labels-4 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-0-2,
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-1-1,
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-1-3,
+input[name=r-4]#i-4-1-2:checked ~ .board .labels.labels-4 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-0-3,
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-1-2,
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-1-4,
+input[name=r-4]#i-4-1-3:checked ~ .board .labels.labels-4 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-1-1,
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-2-0,
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-2-2,
+input[name=r-4]#i-4-2-1:checked ~ .board .labels.labels-4 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-1-2,
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-2-1,
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-2-3,
+input[name=r-4]#i-4-2-2:checked ~ .board .labels.labels-4 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-1-3,
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-2-2,
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-2-4,
+input[name=r-4]#i-4-2-3:checked ~ .board .labels.labels-4 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-2-1,
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-3-0,
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-3-2,
+input[name=r-4]#i-4-3-1:checked ~ .board .labels.labels-4 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-2-2,
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-3-1,
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-3-3,
+input[name=r-4]#i-4-3-2:checked ~ .board .labels.labels-4 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-2-3,
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-3-2,
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-3-4,
+input[name=r-4]#i-4-3-3:checked ~ .board .labels.labels-4 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-0-1,
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-1-0,
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-1-2,
+input[name=r-5]#i-5-1-1:checked ~ .board .labels.labels-5 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-0-2,
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-1-1,
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-1-3,
+input[name=r-5]#i-5-1-2:checked ~ .board .labels.labels-5 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-0-3,
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-1-2,
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-1-4,
+input[name=r-5]#i-5-1-3:checked ~ .board .labels.labels-5 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-1-1,
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-2-0,
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-2-2,
+input[name=r-5]#i-5-2-1:checked ~ .board .labels.labels-5 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-1-2,
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-2-1,
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-2-3,
+input[name=r-5]#i-5-2-2:checked ~ .board .labels.labels-5 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-1-3,
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-2-2,
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-2-4,
+input[name=r-5]#i-5-2-3:checked ~ .board .labels.labels-5 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-2-1,
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-3-0,
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-3-2,
+input[name=r-5]#i-5-3-1:checked ~ .board .labels.labels-5 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-2-2,
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-3-1,
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-3-3,
+input[name=r-5]#i-5-3-2:checked ~ .board .labels.labels-5 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-2-3,
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-3-2,
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-3-4,
+input[name=r-5]#i-5-3-3:checked ~ .board .labels.labels-5 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-0-1,
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-1-0,
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-1-2,
+input[name=r-6]#i-6-1-1:checked ~ .board .labels.labels-6 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-0-2,
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-1-1,
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-1-3,
+input[name=r-6]#i-6-1-2:checked ~ .board .labels.labels-6 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-0-3,
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-1-2,
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-1-4,
+input[name=r-6]#i-6-1-3:checked ~ .board .labels.labels-6 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-1-1,
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-2-0,
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-2-2,
+input[name=r-6]#i-6-2-1:checked ~ .board .labels.labels-6 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-1-2,
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-2-1,
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-2-3,
+input[name=r-6]#i-6-2-2:checked ~ .board .labels.labels-6 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-1-3,
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-2-2,
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-2-4,
+input[name=r-6]#i-6-2-3:checked ~ .board .labels.labels-6 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-2-1,
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-3-0,
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-3-2,
+input[name=r-6]#i-6-3-1:checked ~ .board .labels.labels-6 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-2-2,
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-3-1,
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-3-3,
+input[name=r-6]#i-6-3-2:checked ~ .board .labels.labels-6 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-2-3,
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-3-2,
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-3-4,
+input[name=r-6]#i-6-3-3:checked ~ .board .labels.labels-6 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-0-1,
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-1-0,
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-1-2,
+input[name=r-7]#i-7-1-1:checked ~ .board .labels.labels-7 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-0-2,
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-1-1,
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-1-3,
+input[name=r-7]#i-7-1-2:checked ~ .board .labels.labels-7 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-0-3,
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-1-2,
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-1-4,
+input[name=r-7]#i-7-1-3:checked ~ .board .labels.labels-7 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-1-1,
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-2-0,
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-2-2,
+input[name=r-7]#i-7-2-1:checked ~ .board .labels.labels-7 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-1-2,
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-2-1,
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-2-3,
+input[name=r-7]#i-7-2-2:checked ~ .board .labels.labels-7 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-1-3,
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-2-2,
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-2-4,
+input[name=r-7]#i-7-2-3:checked ~ .board .labels.labels-7 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-2-1,
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-3-0,
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-3-2,
+input[name=r-7]#i-7-3-1:checked ~ .board .labels.labels-7 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-2-2,
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-3-1,
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-3-3,
+input[name=r-7]#i-7-3-2:checked ~ .board .labels.labels-7 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-2-3,
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-3-2,
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-3-4,
+input[name=r-7]#i-7-3-3:checked ~ .board .labels.labels-7 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-1-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-0-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-1-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-1-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-2-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-0-1,
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-1-0,
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-1-2,
+input[name=r-8]#i-8-1-1:checked ~ .board .labels.labels-8 .label-2-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-1-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-0-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-1-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-1-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-2-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-0-2,
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-1-1,
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-1-3,
+input[name=r-8]#i-8-1-2:checked ~ .board .labels.labels-8 .label-2-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-1-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-0-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-1-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-1-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-2-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-0-3,
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-1-2,
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-1-4,
+input[name=r-8]#i-8-1-3:checked ~ .board .labels.labels-8 .label-2-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-2-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-1-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-2-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-2-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-3-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-1-1,
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-2-0,
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-2-2,
+input[name=r-8]#i-8-2-1:checked ~ .board .labels.labels-8 .label-3-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-2-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-1-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-2-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-2-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-3-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-1-2,
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-2-1,
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-2-3,
+input[name=r-8]#i-8-2-2:checked ~ .board .labels.labels-8 .label-3-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-2-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-1-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-2-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-2-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-3-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-1-3,
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-2-2,
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-2-4,
+input[name=r-8]#i-8-2-3:checked ~ .board .labels.labels-8 .label-3-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-3-1 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-2-1 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-3-0 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-3-2 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-4-1 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-2-1,
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-3-0,
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-3-2,
+input[name=r-8]#i-8-3-1:checked ~ .board .labels.labels-8 .label-4-1 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-3-2 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-2-2 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-3-1 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-3-3 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-4-2 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-2-2,
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-3-1,
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-3-3,
+input[name=r-8]#i-8-3-2:checked ~ .board .labels.labels-8 .label-4-2 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-3-3 {
+  transform: translate(0, 0);
+  opacity: 1;
+  z-index: 2;
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-2-3 {
+  transform: translate(0, 92px);
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-3-2 {
+  transform: translate(92px, 0);
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-3-4 {
+  transform: translate(-92px, 0);
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-4-3 {
+  transform: translate(0, -92px);
+}
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-2-3,
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-3-2,
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-3-4,
+input[name=r-8]#i-8-3-3:checked ~ .board .labels.labels-8 .label-4-3 {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=function.css.map */

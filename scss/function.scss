@@ -1,0 +1,92 @@
+$row: 3;
+$col: 3;
+$size: 90px;
+$between: 2px;
+
+.wrap {
+	.board {
+		position: relative;
+		.grid {
+			display: grid;
+			grid-template-columns: repeat($col, $size);
+			gap: $between;
+			.clm {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: $size;
+				height: $size;
+				z-index: 1;
+				position: relative;
+			}
+		}
+		.labels {
+			display: grid;
+			grid-template-columns: repeat($col, $size);
+			gap: $between;
+			background: transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			.label {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: $size;
+				height: $size;
+				background: #e0e0e0;
+				opacity: 0;
+				z-index: 1;
+				pointer-events: none;
+			}
+		}
+	}
+}
+input {
+	display: none;
+	@for $i from 1 through $row {
+		@for $j from 1 through $col {
+			&.row-#{$i}.col-#{$j}:checked ~ .board .labels .label-#{$i}-#{$j} {
+				opacity: 1;
+				z-index: -1;
+			}
+		}
+	}
+
+	@for $r from 1 through ($row * $col - 1) {
+		&[name=r-#{$r}] {
+			@for $i from 1 through $row {
+				@for $j from 1 through $col {
+					&#i-#{$r}-#{$i}-#{$j}:checked ~ .board .labels.labels-#{$r} {
+						.label-#{$i}-#{$j} {
+							transform: translate(0, 0);
+							opacity: 1;
+							z-index: 2;
+						}
+						.label-#{$i - 1}-#{$j} {
+							transform: translate(0, ($size + $between));
+						}
+						.label-#{$i}-#{$j - 1} {
+							transform: translate(($size + $between), 0);
+						}
+						.label-#{$i}-#{$j + 1} {
+							transform: translate(-($size + $between),0);
+						}
+						.label-#{$i + 1}-#{$j} {
+							transform: translate(0,-($size + $between));
+						}
+						.label-#{$i - 1}-#{$j},
+						.label-#{$i}-#{$j - 1},
+						.label-#{$i}-#{$j + 1},
+						.label-#{$i + 1}-#{$j} {
+							pointer-events: auto;
+							opacity: 1;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+}
